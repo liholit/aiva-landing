@@ -46,13 +46,15 @@
 
     strong { color: var(--text-bright); }
 
-    /* Highlight for trigger phrases */
+    /* Highlight for trigger phrases — Telegram-style solid marker */
     .hi {
-      background: linear-gradient(120deg, rgba(0, 122, 255, 0.12) 0%, rgba(0, 122, 255, 0.06) 100%);
-      padding: 1px 6px;
-      border-radius: 4px;
-      color: var(--heading);
+      background: #007AFF;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 6px;
       font-weight: inherit;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
     /* Layout */
