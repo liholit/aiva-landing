@@ -46,14 +46,16 @@
 
     strong { color: var(--text-bright); }
 
-    /* Highlight for trigger phrases — marker underline */
+    /* Highlight for trigger phrases — hand-drawn marker underline */
     .hi {
-      text-decoration: underline;
-      text-decoration-color: #007AFF;
-      text-decoration-thickness: 3px;
-      text-underline-offset: 3px;
+      text-decoration: none;
       color: inherit;
       font-weight: inherit;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M0,5 C10,3.5 20,6 40,4.5 C60,3 75,6.5 100,4 C125,1.5 140,6 160,4.5 C180,3 190,5.5 200,4' fill='none' stroke='%23007AFF' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: 0 100%;
+      background-size: 120px 6px;
+      padding-bottom: 4px;
     }
 
     /* Layout */
