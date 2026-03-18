@@ -9,6 +9,9 @@
   <meta property="og:description" content="3 ИИ-агента заменяют маркетолога, бизнес-консультанта и аналитика. 10 вопросов — готовый документ для команды.">
   <meta property="og:image" content="https://aiva-app.ru/img/hero-tree.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,7 +33,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 16px;
       background: var(--bg);
       color: var(--text);
@@ -43,7 +46,7 @@
 
     .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-    h1, h2, h3 { color: var(--heading); font-weight: 700; }
+    h1, h2, h3 { color: var(--heading); font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
     h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.15; }
     h2 { font-size: clamp(26px, 4.5vw, 40px); line-height: 1.25; text-align: center; margin-bottom: 48px; }
     h3 { font-size: clamp(18px, 2.5vw, 24px); }
@@ -87,7 +90,8 @@
     }
     .header .container { display: flex; align-items: center; justify-content: space-between; }
     .header-logo {
-      font-size: 22px; font-weight: 800; color: var(--cyan);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 700; color: var(--cyan);
       text-shadow: var(--glow-cyan); letter-spacing: 2px;
       text-decoration: none;
     }
@@ -114,8 +118,9 @@
     }
     .hero-content { position: relative; z-index: 2; }
     .hero-logo {
-      margin: 0 auto 32px; font-size: clamp(48px, 10vw, 80px);
-      font-weight: 800; letter-spacing: 6px; color: var(--cyan);
+      margin: 0 auto 32px; font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(48px, 10vw, 80px);
+      font-weight: 700; letter-spacing: 8px; color: var(--cyan);
       text-shadow: 0 0 40px rgba(0,229,255,0.6), 0 0 80px rgba(0,229,255,0.3);
     }
     .hero h1 { margin-bottom: 20px; }
@@ -135,7 +140,7 @@
       background: var(--bg-card); border-radius: 16px;
       border: 1px solid var(--border);
     }
-    .metric-value { font-size: 32px; font-weight: 800; color: var(--cyan); display: block; }
+    .metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--cyan); display: block; }
     .metric-label { font-size: 13px; color: var(--text); margin-top: 4px; }
 
     /* ===== PAIN SECTION ===== */
@@ -174,7 +179,7 @@
       width: 200px; height: 200px; object-fit: cover;
     }
     .agent-info { padding: 28px 32px; display: flex; flex-direction: column; justify-content: center; }
-    .agent-name { font-size: 24px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+    .agent-name { font-family: 'Space Grotesk', sans-serif; font-size: 24px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
     .agent-tagline { font-size: 15px; color: var(--text-bright); margin-bottom: 12px; }
     .agent-meta { font-size: 13px; color: var(--text); }
     .agent-meta span { margin-right: 16px; }
