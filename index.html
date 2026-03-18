@@ -113,8 +113,11 @@
       background: linear-gradient(to top, var(--bg), transparent);
     }
     .hero-content { position: relative; z-index: 2; }
-    .hero-logo { max-width: 400px; margin: 0 auto 32px; }
-    .hero-logo img { width: 100%; height: auto; mix-blend-mode: screen; }
+    .hero-logo {
+      margin: 0 auto 32px; font-size: clamp(48px, 10vw, 80px);
+      font-weight: 800; letter-spacing: 6px; color: var(--cyan);
+      text-shadow: 0 0 40px rgba(0,229,255,0.6), 0 0 80px rgba(0,229,255,0.3);
+    }
     .hero h1 { margin-bottom: 20px; }
     .hero-sub {
       font-size: clamp(16px, 2vw, 19px); color: var(--text-bright);
@@ -379,7 +382,7 @@
     }
 
     @media (max-width: 480px) {
-      .hero-logo { max-width: 200px; }
+      .hero-logo { font-size: 48px; }
       .metrics { gap: 8px; }
       .metric { padding: 12px 6px; }
       .metric-value { font-size: 20px; }
@@ -418,9 +421,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content">
-      <div class="hero-logo">
-        <img src="img/logo-aiva.jpg" alt="AiVA">
-      </div>
+      <div class="hero-logo">AiVA</div>
       <h1>Нейро-команда<br>для вашего бизнеса</h1>
       <p class="hero-sub">3 ИИ-агента заменяют маркетолога, бизнес-консультанта и&nbsp;аналитика. <span class="glow">10 вопросов</span> — и&nbsp;команда работает на&nbsp;вас</p>
       <div class="hero-buttons">
