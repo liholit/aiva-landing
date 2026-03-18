@@ -17,8 +17,11 @@
 
     :root {
       --bg: #0A0E1A;
-      --bg-card: rgba(255,255,255,0.04);
-      --bg-card-hover: rgba(255,255,255,0.08);
+      --bg-card: rgba(255,255,255,0.06);
+      --bg-card-hover: rgba(255,255,255,0.10);
+      --glass: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.12);
+      --glass-shadow: 0 8px 32px rgba(0,0,0,0.3);
       --text: rgba(255,255,255,0.7);
       --text-bright: rgba(255,255,255,0.9);
       --heading: #FFFFFF;
@@ -52,6 +55,19 @@
     h3 { font-size: clamp(18px, 2.5vw, 24px); }
 
     a { color: var(--cyan); text-decoration: none; }
+
+    /* ===== LIQUID GLASS ===== */
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .glass:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
 
     /* ===== GLOW TEXT ===== */
     .glow { color: var(--cyan); text-shadow: var(--glow-cyan); }
@@ -136,9 +152,7 @@
       margin-top: 60px; max-width: 700px; margin-left: auto; margin-right: auto;
     }
     .metric {
-      text-align: center; padding: 24px 16px;
-      background: var(--bg-card); border-radius: 16px;
-      border: 1px solid var(--border);
+      text-align: center; padding: 24px 16px; border-radius: 16px;
     }
     .metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--cyan); display: block; }
     .metric-label { font-size: 13px; color: var(--text); margin-top: 4px; }
@@ -147,10 +161,9 @@
     .pain { padding: 100px 0; }
     .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
     .pain-card {
-      background: var(--bg-card); border-radius: 16px; padding: 32px 24px;
-      border: 1px solid var(--border); text-align: center; transition: all 0.3s;
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center; transition: all 0.3s;
     }
-    .pain-card:hover { border-color: rgba(0,229,255,0.3); background: var(--bg-card-hover); }
     .pain-icon { font-size: 36px; margin-bottom: 16px; }
     .pain-card h3 { font-size: 18px; margin-bottom: 12px; }
     .pain-card p { font-size: 15px; line-height: 1.7; }
@@ -163,10 +176,8 @@
     .agents { padding: 100px 0; }
     .agent-cards { display: grid; gap: 32px; }
     .agent-card {
-      background: var(--bg-card); border-radius: 20px; overflow: hidden;
-      border: 1px solid var(--border); transition: all 0.3s;
+      border-radius: 20px; overflow: hidden; transition: all 0.3s;
     }
-    .agent-card:hover { border-color: rgba(0,229,255,0.3); }
     .agent-card.avatar-agent:hover { border-color: rgba(0,229,255,0.4); }
     .agent-card.ikran-agent:hover { border-color: rgba(123,47,255,0.4); }
     .agent-card.toruk-agent:hover { border-color: rgba(255,107,43,0.4); }
@@ -223,8 +234,7 @@
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
     .step {
       text-align: center; padding: 32px 20px;
-      background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border);
-      position: relative;
+      border-radius: 16px; position: relative;
     }
     .step-num {
       width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 20px;
@@ -243,8 +253,8 @@
     /* ===== EXAMPLE / CASE STUDY ===== */
     .example { padding: 100px 0; }
     .example-card {
-      background: var(--bg-card); border-radius: 20px; padding: 48px;
-      border: 1px solid var(--border); max-width: 800px; margin: 0 auto;
+      border-radius: 20px; padding: 48px;
+      max-width: 800px; margin: 0 auto;
     }
     .example-niche {
       display: inline-block; background: rgba(0,229,255,0.1); color: var(--cyan);
@@ -290,10 +300,8 @@
       .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
     }
     .testimonial-card {
-      background: var(--bg-card); border-radius: 16px; padding: 28px;
-      border: 1px solid var(--border); transition: all 0.3s;
+      border-radius: 16px; padding: 28px; transition: all 0.3s;
     }
-    .testimonial-card:hover { border-color: rgba(0,229,255,0.3); }
     .testimonial-quote {
       font-size: 15px; line-height: 1.7; color: var(--text-bright);
       margin-bottom: 20px; position: relative; padding-left: 20px;
@@ -434,15 +442,15 @@
         <a href="#example" class="btn-secondary">Посмотреть пример</a>
       </div>
       <div class="metrics reveal">
-        <div class="metric">
+        <div class="metric glass">
           <span class="metric-value">3</span>
           <span class="metric-label">ИИ-агента</span>
         </div>
-        <div class="metric">
+        <div class="metric glass">
           <span class="metric-value">10</span>
           <span class="metric-label">вопросов</span>
         </div>
-        <div class="metric">
+        <div class="metric glass">
           <span class="metric-value">15</span>
           <span class="metric-label">минут</span>
         </div>
@@ -456,17 +464,17 @@
       <div class="section-label reveal">Знакомо?</div>
       <h2 class="reveal">Почему маркетинг буксует</h2>
       <div class="pain-grid">
-        <div class="pain-card reveal">
+        <div class="pain-card glass reveal">
           <div class="pain-icon">⚡</div>
           <h3>Маркетолог не понимает ваш бизнес</h3>
           <p>Каждому новому человеку в команде объясняете с нуля. Уходит — и всё заново.</p>
         </div>
-        <div class="pain-card reveal">
+        <div class="pain-card glass reveal">
           <div class="pain-icon">💬</div>
           <h3>ChatGPT даёт общие фразы</h3>
           <p>«Ваша ЦА — мужчины 30-45 лет». Без методики, без глубины, без языка клиента.</p>
         </div>
-        <div class="pain-card reveal">
+        <div class="pain-card glass reveal">
           <div class="pain-icon">💸</div>
           <h3>Агентства берут 200-500К</h3>
           <p>И всё равно спрашивают у вас. Потому что знание о бизнесе — в вашей голове.</p>
@@ -484,7 +492,7 @@
       <div class="agent-cards">
 
         <!-- AVATAR -->
-        <div class="agent-card avatar-agent reveal">
+        <div class="agent-card avatar-agent glass reveal">
           <div class="agent-header" onclick="toggleAgent(this)">
             <img src="img/avatar-card.jpg" alt="AVATAR" class="agent-img">
             <div class="agent-info">
@@ -546,7 +554,7 @@
         </div>
 
         <!-- iKRAN -->
-        <div class="agent-card ikran-agent reveal">
+        <div class="agent-card ikran-agent glass reveal">
           <div class="agent-header" onclick="toggleAgent(this)">
             <img src="img/ikran-card.jpg" alt="iKRAN" class="agent-img">
             <div class="agent-info">
@@ -604,7 +612,7 @@
         </div>
 
         <!-- TORUK -->
-        <div class="agent-card toruk-agent reveal">
+        <div class="agent-card toruk-agent glass reveal">
           <div class="agent-header" onclick="toggleAgent(this)">
             <img src="img/toruk-card.jpg" alt="TORUK" class="agent-img">
             <div class="agent-info">
@@ -664,19 +672,19 @@
       <div class="section-label reveal">Как это работает</div>
       <h2 class="reveal">Три шага — готовый документ</h2>
       <div class="steps">
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">1</div>
           <h3>Ответьте на 10 вопросов</h3>
           <p>В Telegram-боте, как в переписке с другом. Без форм и регистрации.</p>
           <span class="step-arrow">&rarr;</span>
         </div>
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">2</div>
           <h3>Выберите агента</h3>
           <p>AVATAR, iKRAN или TORUK — каждый решает свою задачу.</p>
           <span class="step-arrow">&rarr;</span>
         </div>
-        <div class="step reveal">
+        <div class="step glass reveal">
           <div class="step-num">3</div>
           <h3>Получите документ</h3>
           <p>Готовый для передачи маркетологу, команде или подрядчику.</p>
@@ -690,7 +698,7 @@
     <div class="container">
       <div class="section-label reveal">Пример результата</div>
       <h2 class="reveal">Что внутри анализа AVATAR</h2>
-      <div class="example-card reveal">
+      <div class="example-card glass reveal">
         <div class="example-niche">Ниша: ремонт квартир под ключ</div>
         <h3>Фрагменты из реального анализа</h3>
         <div class="example-quotes">
@@ -759,7 +767,7 @@
       <div class="section-label reveal">Отзывы</div>
       <h2 class="reveal">Что говорят предприниматели</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">По методу Шварца ни одна необученная нейросеть так не проанализирует. Триггерные фразы моей ЦА напомнили мне, зачем я вообще начала этим заниматься. Это очень крутой анализ.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/ekaterina.jpg" alt="Екатерина" onerror="this.style.display='none'">
@@ -769,7 +777,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Как будто большой новый инструмент — есть новые мысли, надо с ними «переспать». Сразу захотелось рекомендовать клиентам: такой глубины анализа ЦА я раньше не видел.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/egor.jpg" alt="Егор" onerror="this.style.display='none'">
@@ -779,7 +787,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Если я — технический ноль — разобралась, написала и дошла до конца, то для нетехнарей всё решено блестяще и очень просто.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/elena.jpg" alt="Елена" onerror="this.style.display='none'">
@@ -789,7 +797,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Прогнала отчёт через своего ИИ-ассистента — и он сразу выдал контент-план на месяц. AiVA стала первым шагом в моём рабочем пайплайне. Все боли клиентов — конкретно и точечно.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/anastasia.jpg" alt="Анастасия" onerror="this.style.display='none'">
@@ -799,7 +807,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Анализ, полученный через AiVA, дал мне не просто описание ЦА, а инструмент для работы — триггеры и формулировки, которые я сразу использую. Особенно ценным оказался блок про барьеры и мифы.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/anton.jpg" alt="Антон" onerror="this.style.display='none'">
@@ -809,7 +817,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Все боли клиентов — как на ладони, именно так всё и есть. Для меня ценно, что увидела подтверждение: я понимаю своих клиентов правильно. Очень крутой инструмент для анализа ЦА — это достойно.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/kristina.jpg" alt="Кристина" onerror="this.style.display='none'">
@@ -819,7 +827,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Классная штука для старта любого проекта и не только! Анализ описывает реальные ситуации, не общие слова. Так воодушевился, что решил второй проект проанализировать — пошёл тестировать дальше.</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/vlad.jpg" alt="Влад" onerror="this.style.display='none'">
@@ -829,7 +837,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Год назад, когда проходил обучение на продуктолога — эта методика очень сильно облегчила бы мне жизнь. Самая ценная часть — конкретные рекомендации: не просто «что есть», а «что с этим делать».</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/anatoliy.jpg" alt="Анатолий" onerror="this.style.display='none'">
@@ -839,7 +847,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card glass reveal">
           <div class="testimonial-quote">Всё в точку! Буквально перед этим общалась с коллегой — рассказывала про ценности компании и нашу ЦА. Открываю результат — и там всё это уже написано. Ну это ли не чудо!</div>
           <div class="testimonial-author">
             <img class="testimonial-avatar" src="avatars/tatyana.jpg" alt="Татьяна" onerror="this.style.display='none'">
